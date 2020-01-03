@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <title>A Simple Chat By Node</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="icon" type="image/gif" href="animated_favicon1.gif" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+    </head>
+    <body>
+        <div class="login">
+            <input type="text" placeholder="请输入昵称" autofocus />
+            <button type="button">登录</button>
+        </div>
+        <div class="main">
+            <div class="header">
+                <img src="img/logo.jpg" alt="" />
+                <span>happy聊天室</span>
+            </div>
+            <div class="container">
+                <div class="conversation">
+                    <ul class="massage-list"></ul>
+                    <div class="massage-send">
+                        <div class="extra">
+                            <!-- 自定义字体颜色 -->
+                            <label for="color" class="icon-font" title="自定义字体颜色">
+                                <input id="color" type="color" value="#000000" />
+                            </label>
+                            <!-- 表情 -->
+                            <label title="发送表情" class="icon-emoji"></label>
+                            <div class="emoji-box">
+                                <div class="box-title">经典表情</div>
+                                <ul class="box-content"></ul>
+                            </div>
+                            <!-- 窗口抖动 -->
+                            <label title="窗口抖动" class="icon-shake"></label>
+                            <!-- 图片 -->
+                            <label for="img" class="icon-img" title="发送图片">
+                                <input id="img" type="file" accept="image/*" />
+                            </label>
+                        </div>
+                        <textarea></textarea>
+                        <div class="button">
+                            <button id="logout">关闭</button>
+                            <button id="send">发送</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="contacts">
+                    <div class="online-num">在线人员(<span>0</span>)</div>
+                    <ul class="online-user"></ul>
+                    <div class="online-none">当前无人在线哟~</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 加载script -->
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+        <script src="js/chat-client.js"></script>
+    </body>
+</html>
